@@ -16,12 +16,16 @@ const gadgets = [
 		name: "Clock",
 		link: "./apps/clock",
 		colors: "bg-sky-200 border-sky-300",
+		button: "opacity-100",
+		disabled: "false",
 		icon: <FontAwesomeIcon icon={faClock} className="h-24 w-24 text-sky-600" />,
 	},
 	{
 		name: "Coming Soon",
 		link: "#",
 		colors: "bg-slate-200 border-slate-300",
+		button: "opacity-50 cursor-not-allowed hover:bg-sky-500",
+		disabled: "true",
 		icon: (
 			<FontAwesomeIcon
 				icon={faQuestionCircle}
@@ -150,7 +154,8 @@ function Gadgets() {
 							>
 								<motion.button
 									onClick={handleGetStartedButton}
-									className="rounded-lg bg-sky-500 px-6 py-2 text-lg font-semibold text-white transition-colors hover:bg-sky-600"
+									{...gadgets[currentSlide].disabled === 'true' ? { disabled: true } : {}}
+									className={`rounded-lg bg-sky-500 px-6 py-2 text-lg font-semibold text-white transition-colors hover:bg-sky-600 ${gadgets[currentSlide].button}`}
 								>
 									Open
 								</motion.button>
