@@ -26,6 +26,7 @@ export default function Greeting() {
 	}
 
 	return (
+		<div className="w-screen h-screen fixed bg-white dark:bg-slate-900">
 		<AnimatePresence>
 			{isVisible && (
 				<motion.div
@@ -34,7 +35,7 @@ export default function Greeting() {
 					animate="visible"
 					exit="hidden"
 					variants={outerVariants}
-					className="flex h-screen w-screen items-center justify-center bg-slate-100"
+					className="flex h-screen w-screen items-center justify-center bg-slate-100 dark:bg-slate-900"
 				>
 					<motion.div
 						key="content"
@@ -42,12 +43,12 @@ export default function Greeting() {
 						animate="visible"
 						exit="hidden"
 						variants={itemVariants}
-						className="mx-4 h-fit max-w-md items-center justify-center rounded-xl border border-slate-200 bg-white px-12 py-12 shadow-xl sm:mx-0"
+						className="mx-4 h-fit max-w-md items-center justify-center rounded-xl border border-slate-200 bg-white px-12 py-12 shadow-xl dark:shadow-black/25 dark:border-slate-700/50 dark:bg-slate-800/40 sm:mx-0"
 					>
-						<h1 className="mb-4 cursor-default text-center text-4xl font-bold">
+						<h1 className="mb-4 cursor-default text-center text-4xl font-bold text-black dark:text-white">
 							Simple Gadgets
 						</h1>
-						<p className="mb-8 cursor-default text-center text-lg text-gray-600">
+						<p className="mb-8 cursor-default text-center text-lg text-slate-600 dark:text-slate-400">
 							A collection of simple but useful tools to enhance your everyday
 							adventures.
 						</p>
@@ -62,7 +63,7 @@ export default function Greeting() {
 								href="https://github.com/HyphenZero/simple-gadgets"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="focus:border-3 flex items-center justify-center rounded-lg border-2 border-slate-600 bg-white p-2 px-4 text-lg font-semibold text-slate-600 transition-colors hover:bg-slate-200/75 focus:outline-none focus-visible:ring-4"
+								className="focus:border-3 flex items-center justify-center rounded-lg border-2 border-slate-600 dark:border-slate-400 bg-transparent p-2 px-4 text-slate-600 dark:text-slate-400 transition-colors hover:bg-slate-200/75 dark:hover:bg-slate-700/75 focus:outline-none focus-visible:ring-4"
 							>
 								<FontAwesomeIcon icon={faGithub} className="h-7 w-7" />
 							</a>
@@ -70,6 +71,7 @@ export default function Greeting() {
 					</motion.div>
 				</motion.div>
 			)}
-		</AnimatePresence>
+			</AnimatePresence>
+			</div>
 	)
 }

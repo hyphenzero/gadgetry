@@ -15,21 +15,21 @@ const gadgets = [
 	{
 		name: "Clock",
 		link: "./apps/clock",
-		colors: "bg-sky-200 border-sky-300",
+		colors: "bg-sky-200 border-sky-300 dark:bg-sky-500/25 dark:border-sky-800",
 		button: "opacity-100",
 		disabled: "false",
-		icon: <FontAwesomeIcon icon={faClock} className="h-24 w-24 text-sky-600" />,
+		icon: <FontAwesomeIcon icon={faClock} className="h-24 w-24 text-sky-600 dark:text-sky-400/90" />,
 	},
 	{
 		name: "Coming Soon",
 		link: "#",
-		colors: "bg-slate-200 border-slate-300",
+		colors: "bg-slate-200 border-slate-300 dark:bg-slate-800 dark:border-slate-700",
 		button: "opacity-50 cursor-not-allowed hover:bg-sky-500",
 		disabled: "true",
 		icon: (
 			<FontAwesomeIcon
 				icon={faQuestionCircle}
-				className="h-24 w-24 text-slate-600"
+				className="h-24 w-24 text-slate-600 dark:text-slate-400/90"
 			/>
 		),
 	},
@@ -74,7 +74,7 @@ function SlideDots({
 			<div
 				key={i}
 				className={`mx-1 h-3 w-3 rounded-full ${
-					currentSlide === i ? "bg-slate-500" : "bg-slate-300"
+					currentSlide === i ? "bg-slate-300" : "bg-slate-600"
 				}`}
 			/>
 		)
@@ -103,7 +103,7 @@ function Gadgets() {
 	}
 
 	return (
-		<div className="fixed h-screen w-screen">
+		<div className="fixed h-screen w-screen bg-white dark:bg-slate-900">
 			<Head>
 				<title>Simple Gadgets</title>
 			</Head>
@@ -122,7 +122,7 @@ function Gadgets() {
 								className="flex justify-center"
 								variants={itemVariants}
 							>
-								<h1 className="cursor-default text-3xl font-bold text-slate-900">
+								<h1 className="cursor-default text-3xl font-bold text-slate-900 dark:text-white">
 									{gadgets[currentSlide].name}
 								</h1>
 							</motion.div>
@@ -154,7 +154,9 @@ function Gadgets() {
 							>
 								<motion.button
 									onClick={handleGetStartedButton}
-									{...gadgets[currentSlide].disabled === 'true' ? { disabled: true } : {}}
+									{...(gadgets[currentSlide].disabled === "true"
+										? { disabled: true }
+										: {})}
 									className={`rounded-lg bg-sky-500 px-6 py-2 text-lg font-semibold text-white transition-colors hover:bg-sky-600 ${gadgets[currentSlide].button}`}
 								>
 									Open
@@ -166,7 +168,7 @@ function Gadgets() {
 								variants={itemVariants}
 							>
 								<motion.button
-									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-white transition-colors hover:bg-gray-800"
+									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 dark:bg-slate-500 font-bold text-white dark:text-slate-900 transition-colors hover:bg-slate-800 dark:hover:bg-slate-400"
 									whileHover={{ scale: 1.25 }}
 									whileTap={{ scale: 1.1 }}
 									onClick={goToPreviousSlide}
@@ -175,7 +177,7 @@ function Gadgets() {
 								</motion.button>
 
 								<motion.button
-									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-white transition-colors hover:bg-gray-800"
+									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 dark:bg-slate-500 font-bold text-white dark:text-slate-900 transition-colors hover:bg-slate-800 dark:hover:bg-slate-400"
 									whileHover={{ scale: 1.25 }}
 									whileTap={{ scale: 1.1 }}
 									onClick={goToNextSlide}

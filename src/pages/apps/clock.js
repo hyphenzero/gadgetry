@@ -35,7 +35,7 @@ export default function ClockApp() {
 		<>
 			<AnimatePresence>
 				{isVisible && (
-					<div class="fixed h-screen w-screen">
+					<div class="fixed h-screen w-screen bg-white dark:bg-slate-900">
 						<motion.div
 							variants={clockVariants}
 							initial="hidden"
@@ -48,13 +48,13 @@ export default function ClockApp() {
 									format={"h:mm A"}
 									ticking={true}
 									timezone={timezone}
-									className="cursor-default text-5xl font-bold text-slate-800 sm:text-6xl"
+									className="cursor-default text-5xl font-bold text-slate-900 dark:text-slate-100 sm:text-6xl"
 								/>
 							</div>
 						</motion.div>
 
 						<motion.button
-							className="absolute top-7 left-7 flex h-12 w-12 items-center justify-center rounded-full bg-slate-700 font-bold text-white transition-colors hover:bg-slate-800"
+							className="absolute top-7 left-7 flex h-12 w-12 items-center justify-center rounded-full bg-slate-700 dark:bg-slate-500 font-bold text-white dark:text-slate-900 transition-colors hover:bg-slate-800 dark:hover:bg-slate-400"
 							variants={linkVariants}
 							initial="hidden"
 							animate="visible"
