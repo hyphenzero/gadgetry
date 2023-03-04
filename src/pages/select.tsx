@@ -15,13 +15,13 @@ const gadgets = [
 	{
 		name: "Clock",
 		link: "./apps/clock",
-		color: "sky",
+		colors: "bg-sky-200 border-sky-300",
 		icon: <FontAwesomeIcon icon={faClock} className="h-24 w-24 text-sky-600" />,
 	},
 	{
 		name: "Coming Soon",
 		link: "#",
-		color: "slate",
+		colors: "bg-slate-200 border-slate-300",
 		icon: (
 			<FontAwesomeIcon
 				icon={faQuestionCircle}
@@ -118,7 +118,7 @@ function Gadgets() {
 								className="flex justify-center"
 								variants={itemVariants}
 							>
-								<h1 className="text-3xl font-bold text-slate-900 cursor-default">
+								<h1 className="cursor-default text-3xl font-bold text-slate-900">
 									{gadgets[currentSlide].name}
 								</h1>
 							</motion.div>
@@ -128,7 +128,7 @@ function Gadgets() {
 								variants={itemVariants}
 							>
 								<div
-									className={`flex h-64 w-64 items-center justify-center bg-${gadgets[currentSlide].color}-200 rounded-3xl border-2 shadow-xl border-${gadgets[currentSlide].color}-300`}
+									className={`flex h-64 w-64 items-center justify-center rounded-3xl border-2 shadow-xl ${gadgets[currentSlide].colors}`}
 								>
 									{gadgets[currentSlide].icon}
 								</div>

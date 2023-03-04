@@ -44,10 +44,10 @@ export default function Greeting() {
 						variants={itemVariants}
 						className="mx-4 h-fit max-w-md items-center justify-center rounded-xl border border-slate-200 bg-white px-12 py-12 shadow-xl sm:mx-0"
 					>
-						<h1 className="mb-4 text-center text-4xl font-bold cursor-default">
+						<h1 className="mb-4 cursor-default text-center text-4xl font-bold">
 							Simple Gadgets
 						</h1>
-						<p className="mb-8 text-center text-lg text-gray-600 cursor-default">
+						<p className="mb-8 cursor-default text-center text-lg text-gray-600">
 							A collection of simple but useful tools to enhance your everyday
 							adventures.
 						</p>

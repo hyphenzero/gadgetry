@@ -48,18 +48,22 @@ export default function ClockApp() {
 									format={"h:mm A"}
 									ticking={true}
 									timezone={timezone}
-									className="text-5xl font-bold text-slate-800 sm:text-6xl cursor-default"
+									className="cursor-default text-5xl font-bold text-slate-800 sm:text-6xl"
 								/>
 							</div>
 						</motion.div>
 
 						<motion.button
-							className="absolute flex h-12 w-12 top-7 left-7 items-center justify-center rounded-full bg-slate-700 font-bold text-white transition-colors hover:bg-slate-800"
+							className="absolute top-7 left-7 flex h-12 w-12 items-center justify-center rounded-full bg-slate-700 font-bold text-white transition-colors hover:bg-slate-800"
+							variants={linkVariants}
+							initial="hidden"
+							animate="visible"
+							exit="hidden"
 							whileHover={{ scale: 1.25 }}
 							whileTap={{ scale: 1.1 }}
 							onClick={handleBackButton}
 						>
-							<FontAwesomeIcon icon={faChevronLeft} className="w-5 h-5"/>
+							<FontAwesomeIcon icon={faChevronLeft} className="h-5 w-5" />
 						</motion.button>
 					</div>
 				)}
