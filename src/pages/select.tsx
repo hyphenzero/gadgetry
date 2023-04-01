@@ -80,7 +80,7 @@ function SlideDots({
 			<div
 				key={i}
 				className={`mx-1 h-3 w-3 rounded-full ${
-					currentSlide === i ? "bg-slate-300" : "bg-slate-600"
+					currentSlide === i ? "dark:bg-slate-300 bg-slate-600" : "dark:bg-slate-600 bg-slate-300"
 				}`}
 			/>
 		)
