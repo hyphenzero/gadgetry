@@ -7,7 +7,7 @@ export default function Document() {
 			<Head>
 				<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 			</Head>
-			<body className="fixed h-screen w-screen select-none">
+			<body className="fixed h-screen w-screen select-none bg-white dark:bg-slate-950">
 				<Main />
 				<NextScript />
 			</body>

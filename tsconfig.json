@@ -1,11 +1,7 @@
 {
 	"compilerOptions": {
 		"target": "es5",
-		"lib": [
-			"dom",
-			"dom.iterable",
-			"esnext"
-		],
+		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"skipLibCheck": true,
 		"strict": true,
@@ -20,9 +16,7 @@
 		"incremental": true,
 		"baseUrl": ".",
 		"paths": {
-			"@/*": [
-				"./src/*"
-			]
+			"@/*": ["./src/*"]
 		}
 	},
 	"include": [
@@ -34,7 +28,5 @@
 		"src/pages/apps/speedometer.tsx",
 		"src/pages/apps/clock.js"
 	],
-	"exclude": [
-		"node_modules"
-	]
+	"exclude": ["node_modules"]
 }

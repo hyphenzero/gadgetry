@@ -3,6 +3,7 @@
 Simple Gadgets is a collection of simple but useful tools to enrich your everyday adventures.
 
 ## Current Gadgets
+
 Simple Gadgets includes the following gadgets as of the latest release:
 
 - [Clock](simple-gadgets.vercel.app/clock)
