@@ -6,7 +6,7 @@ Gadgetry is a collection of simple but useful tools to enrich your everyday adve
 
 Gadgetry includes the following gadgets as of the latest release:
 
-- [Clock](gadgetry.vercel.app/clock)
+- [Clock](https://hyphenzero-gadgetry.vercel.app/apps/clock)
 
 More gadgets and features are in development.
 
