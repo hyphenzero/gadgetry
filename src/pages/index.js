@@ -46,7 +46,7 @@ export default function Greeting() {
 							className="mx-4 h-fit max-w-md items-center justify-center rounded-xl border border-slate-200 bg-white px-12 py-12 shadow-2xl dark:border-slate-800 dark:bg-slate-900/60 sm:mx-0"
 						>
 							<h1 className="mb-4 cursor-default text-center text-4xl font-bold text-slate-950 dark:text-white">
-								Simple Gadgets
+								Gadgetry
 							</h1>
 							<p className="mb-8 cursor-default text-center text-lg text-slate-600 dark:text-slate-400">
 								A collection of simple but useful tools to enhance your everyday
@@ -60,7 +60,7 @@ export default function Greeting() {
 									Get Started
 								</button>
 								<a
-									href="https://github.com/HyphenZero/simple-gadgets"
+									href="https://github.com/HyphenZero/gadgetry"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="focus:border-3 flex items-center justify-center rounded-lg border-2 border-slate-600 bg-transparent p-2 px-4 text-slate-600 transition-colors hover:bg-slate-200/75 focus:outline-none focus-visible:ring-4 dark:border-slate-400 dark:text-slate-400 dark:hover:bg-slate-700/75"

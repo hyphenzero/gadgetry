@@ -111,7 +111,7 @@ export default function Select() {
 	return (
 		<div className="fixed h-screen w-screen bg-white dark:bg-slate-950">
 			<Head>
-				<title>Simple Gadgets</title>
+				<title>Gadgetry</title>
 			</Head>
 
 			<div className="flex min-h-screen flex-col items-center justify-center">
@@ -133,16 +133,35 @@ export default function Select() {
 								</h1>
 							</motion.div>
 
-							<motion.div
-								className="flex items-center justify-center"
-								variants={itemVariants}
-							>
-								<div
-									className={`flex h-64 w-64 items-center justify-center rounded-3xl border-2 shadow-xl ${gadgets[currentSlide].colors}`}
+							<div className="flex w-full items-center justify-between mx-auto">
+								<motion.button
+									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-slate-100 transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
+									whileHover={{ scale: 1.25 }}
+									whileTap={{ scale: 1.1 }}
+									onClick={goToPreviousSlide}
 								>
-									{gadgets[currentSlide].icon}
-								</div>
-							</motion.div>
+									<FontAwesomeIcon icon={faChevronLeft} />
+								</motion.button>
+
+								<motion.div
+									variants={itemVariants}
+								>
+									<div
+										className={`flex w-56 h-56 sm:h-64 sm:w-64 items-center justify-center rounded-3xl border-2 shadow-xl ${gadgets[currentSlide].colors}`}
+									>
+										{gadgets[currentSlide].icon}
+									</div>
+								</motion.div>
+
+								<motion.button
+									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-slate-100 transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
+									whileHover={{ scale: 1.25 }}
+									whileTap={{ scale: 1.1 }}
+									onClick={goToNextSlide}
+								>
+									<FontAwesomeIcon icon={faChevronRight} />
+								</motion.button>
+							</div>
 
 							<motion.div
 								className="flex items-center justify-center"
@@ -170,26 +189,12 @@ export default function Select() {
 							</motion.div>
 
 							<motion.div
-								className="mb-1/2 absolute bottom-1/2 left-0 flex w-full justify-between p-4"
+								className="mb-1/2 absolute bottom-1/2 left-0 flex w-full justify-between px-2 sm:px-4"
 								variants={itemVariants}
 							>
-								<motion.button
-									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-slate-100 transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
-									whileHover={{ scale: 1.25 }}
-									whileTap={{ scale: 1.1 }}
-									onClick={goToPreviousSlide}
-								>
-									<FontAwesomeIcon icon={faChevronLeft} />
-								</motion.button>
+								
 
-								<motion.button
-									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-slate-100 transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
-									whileHover={{ scale: 1.25 }}
-									whileTap={{ scale: 1.1 }}
-									onClick={goToNextSlide}
-								>
-									<FontAwesomeIcon icon={faChevronRight} />
-								</motion.button>
+								
 							</motion.div>
 						</motion.div>
 					)}

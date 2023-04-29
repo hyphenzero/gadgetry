@@ -65,6 +65,19 @@ export default function ClockApp() {
 						>
 							<FontAwesomeIcon icon={faChevronLeft} className="h-5 w-5" />
 						</motion.button>
+
+						<motion.button
+							className="absolute right-7 top-7 flex h-12 w-12 items-center justify-center rounded-full bg-slate-700 font-bold text-white transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
+							variants={linkVariants}
+							initial="hidden"
+							animate="visible"
+							exit="hidden"
+							whileHover={{ scale: 1.25 }}
+							whileTap={{ scale: 1.1 }}
+							onClick={handleBackButton}
+						>
+							<FontAwesomeIcon icon={faGear} className="h-5 w-5" />
+						</motion.button>
 					</div>
 				)}
 			</AnimatePresence>
