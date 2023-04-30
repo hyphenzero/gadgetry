@@ -35,7 +35,7 @@ export default function ClockApp() {
 		<>
 			<AnimatePresence>
 				{isVisible && (
-					<div class="fixed h-screen w-screen bg-white dark:bg-slate-950">
+					<div className="fixed h-screen w-screen bg-white dark:bg-slate-950">
 						<motion.div
 							variants={clockVariants}
 							initial="hidden"

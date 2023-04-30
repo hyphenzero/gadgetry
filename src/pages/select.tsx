@@ -138,6 +138,7 @@ export default function Select() {
 									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-slate-100 transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
 									whileHover={{ scale: 1.25 }}
 									whileTap={{ scale: 1.1 }}
+									variants={itemVariants}
 									onClick={goToPreviousSlide}
 								>
 									<FontAwesomeIcon icon={faChevronLeft} />
@@ -157,6 +158,7 @@ export default function Select() {
 									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-slate-100 transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
 									whileHover={{ scale: 1.25 }}
 									whileTap={{ scale: 1.1 }}
+									variants={itemVariants}
 									onClick={goToNextSlide}
 								>
 									<FontAwesomeIcon icon={faChevronRight} />
@@ -186,15 +188,6 @@ export default function Select() {
 								>
 									Open
 								</motion.button>
-							</motion.div>
-
-							<motion.div
-								className="mb-1/2 absolute bottom-1/2 left-0 flex w-full justify-between px-2 sm:px-4"
-								variants={itemVariants}
-							>
-								
-
-								
 							</motion.div>
 						</motion.div>
 					)}
