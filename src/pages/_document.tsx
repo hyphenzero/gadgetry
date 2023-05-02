@@ -8,6 +8,7 @@ export default function Document() {
 				<title>Gadgetry</title>
 				<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 				<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+				<link rel="manifest" href="./manifest.json" />
 			</Head>
 			<body className="fixed h-screen w-screen select-none bg-white dark:bg-slate-950">
 				<Main />
