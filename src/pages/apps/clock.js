@@ -8,6 +8,7 @@ import Clock from "react-live-clock"
 const clockVariants = {
 	hidden: { opacity: 0, y: 20 },
 	visible: { opacity: 1, y: 0 },
+	exit: { opacity: 0, y: 20 },
 }
 
 const linkVariants = {
@@ -40,7 +41,7 @@ export default function ClockApp() {
 							variants={clockVariants}
 							initial="hidden"
 							animate="visible"
-							exit="hidden"
+							exit="exit"
 							className="flex h-screen w-screen items-center justify-center"
 						>
 							<div className="text-center">

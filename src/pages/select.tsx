@@ -18,12 +18,8 @@ const gadgets = [
 		colors: "bg-sky-200 border-sky-300 dark:bg-sky-500/25 dark:border-sky-800",
 		button: "opacity-100",
 		disabled: "false",
-		icon: (
-			<FontAwesomeIcon
-				icon={faClock}
-				className="h-24 w-24 text-sky-600 dark:text-sky-400/90"
-			/>
-		),
+		icon: faClock,
+		iconColors: "text-sky-600 dark:text-sky-400/90",
 	},
 	{
 		name: "Coming Soon",
@@ -32,12 +28,8 @@ const gadgets = [
 			"bg-slate-200 border-slate-300 dark:bg-slate-800 dark:border-slate-700",
 		button: "opacity-50 cursor-not-allowed hover:bg-sky-500",
 		disabled: "true",
-		icon: (
-			<FontAwesomeIcon
-				icon={faQuestionCircle}
-				className="h-24 w-24 text-slate-600 dark:text-slate-400/90"
-			/>
-		),
+		icon: faQuestionCircle,
+		iconColors: "text-slate-600 dark:text-slate-400/90",
 	},
 ]
 
@@ -55,8 +47,8 @@ const containerVariants = {
 		opacity: 0,
 		y: 20,
 		transition: {
-			staggerChildren: 0.075,
-			when: "afterChildren",
+			staggerChildren: 0,
+			when: "beforeChildren",
 		},
 	},
 }
@@ -64,7 +56,7 @@ const containerVariants = {
 const itemVariants = {
 	hidden: { opacity: 0, y: 20 },
 	visible: { opacity: 1, y: 0 },
-	exit: { opacity: 0, y: 20 },
+	exit: { opacity: 0 },
 }
 
 function SlideDots({
@@ -79,8 +71,10 @@ function SlideDots({
 		dots.push(
 			<div
 				key={i}
-				className={`mx-1 h-3 w-3 rounded-full ${
-					currentSlide === i ? "dark:bg-slate-300 bg-slate-600" : "dark:bg-slate-600 bg-slate-300"
+				className={`mx-1 h-3 w-3 rounded-full transition-colors ${
+					currentSlide === i
+						? "bg-slate-600 dark:bg-slate-300"
+						: "bg-slate-300 dark:bg-slate-600"
 				}`}
 			/>
 		)
@@ -133,7 +127,7 @@ export default function Select() {
 								</h1>
 							</motion.div>
 
-							<div className="flex w-full items-center justify-between mx-auto">
+							<div className="mx-auto flex w-full items-center justify-between">
 								<motion.button
 									className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 font-bold text-slate-100 transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
 									whileHover={{ scale: 1.25 }}
@@ -144,13 +138,14 @@ export default function Select() {
 									<FontAwesomeIcon icon={faChevronLeft} />
 								</motion.button>
 
-								<motion.div
-									variants={itemVariants}
-								>
+								<motion.div variants={itemVariants}>
 									<div
-										className={`flex w-56 h-56 sm:h-64 sm:w-64 items-center justify-center rounded-3xl border-2 shadow-xl ${gadgets[currentSlide].colors}`}
+										className={`flex h-56 w-56 items-center justify-center rounded-3xl border-2 shadow-xl transition-colors duration-[400ms] sm:h-64 sm:w-64 ${gadgets[currentSlide].colors}`}
 									>
-										{gadgets[currentSlide].icon}
+										<FontAwesomeIcon
+											icon={gadgets[currentSlide].icon}
+											className={`h-24 w-24 transition-colors duration-[400ms] ${gadgets[currentSlide].iconColors}`}
+										/>
 									</div>
 								</motion.div>
 
