@@ -1,6 +1,5 @@
 import router from "next/router"
 import React from "react"
-import Head from "next/head"
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -104,10 +103,6 @@ export default function Select() {
 
 	return (
 		<div className="fixed h-screen w-screen bg-white dark:bg-slate-950">
-			<Head>
-				<title>Gadgetry</title>
-			</Head>
-
 			<div className="flex min-h-screen flex-col items-center justify-center">
 				<AnimatePresence>
 					{isVisible && (

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router"
+import Head from "next/head"
 import React, { useState, useEffect } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faGear } from "@fortawesome/free-solid-svg-icons"
@@ -34,6 +35,9 @@ export default function ClockApp() {
 
 	return (
 		<>
+			<Head>
+				<title>Clock - Gadgetry</title>
+			</Head>
 			<AnimatePresence>
 				{isVisible && (
 					<div className="fixed h-screen w-screen bg-white dark:bg-slate-950">
@@ -65,19 +69,6 @@ export default function ClockApp() {
 							onClick={handleBackButton}
 						>
 							<FontAwesomeIcon icon={faChevronLeft} className="h-5 w-5" />
-						</motion.button>
-
-						<motion.button
-							className="absolute right-7 top-7 flex h-12 w-12 items-center justify-center rounded-full bg-slate-700 font-bold text-white transition-colors hover:bg-slate-800 dark:bg-slate-500 dark:text-slate-900 dark:hover:bg-slate-400"
-							variants={linkVariants}
-							initial="hidden"
-							animate="visible"
-							exit="hidden"
-							whileHover={{ scale: 1.25 }}
-							whileTap={{ scale: 1.1 }}
-							onClick={handleBackButton}
-						>
-							<FontAwesomeIcon icon={faGear} className="h-5 w-5" />
 						</motion.button>
 					</div>
 				)}

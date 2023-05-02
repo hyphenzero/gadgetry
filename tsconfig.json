@@ -27,6 +27,6 @@
 		"src/pages/index.js",
 		"src/pages/apps/speedometer.tsx",
 		"src/pages/apps/clock.js"
-	],
+, "src/pages/select.tsx"	],
 	"exclude": ["node_modules"]
 }
